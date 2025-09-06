@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Intern Portal - Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+</head>
+<body>
+    <div class="container dashboard-container">
+        <h1>Welcome, {{ user.name }}!</h1>
+        <div class="info-box">
+            <p><strong>Referral Code:</strong> {{ user.referralCode }}</p>
+            <p><strong>Total Donations Raised:</strong> ${{ user.amountRaised }}</p>
+        </div>
+        <div class="rewards-section">
+            <h3>Rewards & Unlockables</h3>
+            <ul>
+                <li><img src="https://cdn-icons-png.flaticon.com/512/616/616408.png" alt="Badge 1" /> Early Bird Badge</li>
+                <li><img src="https://cdn-icons-png.flaticon.com/512/149/149947.png" alt="Badge 2" /> Top Contributor</li>
+                <li><img src="https://cdn-icons-png.flaticon.com/512/1077/1077114.png" alt="Badge 3" /> Referral Master</li>
+            </ul>
+        </div>
+
+        <a href="{{ url_for('leaderboard') }}" class="btn">View Leaderboard</a>
+        <a href="{{ url_for('login') }}" class="btn btn-secondary">Logout</a>
+    </div>
+</body>
+</html>
+
